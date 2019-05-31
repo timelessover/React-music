@@ -18,7 +18,10 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.3",
     "react-transition-group": "^2.5.3",
-    "video-react": "^0.13.2"
+    "video-react": "^0.13.2",
+    "node-sass": "^4.12.0",
+    "react-app-rewire-css-modules": "^1.0.0",
+    "sass-loader": "^7.1.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -33,10 +36,5 @@
     "last 2 versions",
     "android 4",
     "opera 12"
-  ],
-  "devDependencies": {
-    "node-sass": "^4.12.0",
-    "react-app-rewire-css-modules": "^1.0.0",
-    "sass-loader": "^7.1.0"
-  }
+  ]
 }

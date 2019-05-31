@@ -20,7 +20,7 @@ module.exports = function override(config, env) {
     config.resolve.alias = {
         '@': resolve('src')
     }
-    //less模块化
+    //scss模块化
     config = rewireCssModules(config, env);
 
 
