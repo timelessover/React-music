@@ -1,3 +1,4 @@
+//异步加载组件进行代码分割
 import React, { Component } from "react";
 
 export default function asyncComponent(importComponent) {
