@@ -1,0 +1,5 @@
+@import '../../../assets/style/basic';
+
+.container{
+  @include page-container;
+}

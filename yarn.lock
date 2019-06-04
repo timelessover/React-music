@@ -501,9 +501,9 @@
     "@babel/helper-module-transforms" "^7.1.0"
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/plugin-transform-modules-commonjs@^7.2.0", "@babel/plugin-transform-modules-commonjs@^7.4.4":
+"@babel/plugin-transform-modules-basicjs@^7.2.0", "@babel/plugin-transform-modules-basicjs@^7.4.4":
   version "7.4.4"
-  resolved "https://registry.npm.taobao.org/@babel/plugin-transform-modules-commonjs/download/@babel/plugin-transform-modules-commonjs-7.4.4.tgz#0bef4713d30f1d78c2e59b3d6db40e60192cac1e"
+  resolved "https://registry.npm.taobao.org/@babel/plugin-transform-modules-basicjs/download/@babel/plugin-transform-modules-basicjs-7.4.4.tgz#0bef4713d30f1d78c2e59b3d6db40e60192cac1e"
   dependencies:
     "@babel/helper-module-transforms" "^7.4.4"
     "@babel/helper-plugin-utils" "^7.0.0"
@@ -688,7 +688,7 @@
     "@babel/plugin-transform-function-name" "^7.2.0"
     "@babel/plugin-transform-literals" "^7.2.0"
     "@babel/plugin-transform-modules-amd" "^7.2.0"
-    "@babel/plugin-transform-modules-commonjs" "^7.2.0"
+    "@babel/plugin-transform-modules-basicjs" "^7.2.0"
     "@babel/plugin-transform-modules-systemjs" "^7.2.0"
     "@babel/plugin-transform-modules-umd" "^7.2.0"
     "@babel/plugin-transform-named-capturing-groups-regex" "^7.3.0"
@@ -737,7 +737,7 @@
     "@babel/plugin-transform-literals" "^7.2.0"
     "@babel/plugin-transform-member-expression-literals" "^7.2.0"
     "@babel/plugin-transform-modules-amd" "^7.2.0"
-    "@babel/plugin-transform-modules-commonjs" "^7.4.4"
+    "@babel/plugin-transform-modules-basicjs" "^7.4.4"
     "@babel/plugin-transform-modules-systemjs" "^7.4.4"
     "@babel/plugin-transform-modules-umd" "^7.2.0"
     "@babel/plugin-transform-named-capturing-groups-regex" "^7.4.5"
@@ -2401,13 +2401,13 @@ commander@~2.19.0:
   version "2.19.0"
   resolved "https://registry.npm.taobao.org/commander/download/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
 
-common-tags@^1.4.0:
+basic-tags@^1.4.0:
   version "1.8.0"
-  resolved "https://registry.npm.taobao.org/common-tags/download/common-tags-1.8.0.tgz#8e3153e542d4a39e9b10554434afaaf98956a937"
+  resolved "https://registry.npm.taobao.org/basic-tags/download/basic-tags-1.8.0.tgz#8e3153e542d4a39e9b10554434afaaf98956a937"
 
-commondir@^1.0.1:
+basicdir@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.npm.taobao.org/commondir/download/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
+  resolved "https://registry.npm.taobao.org/basicdir/download/basicdir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
 
 component-classes@^1.2.5:
   version "1.2.6"
@@ -3853,7 +3853,7 @@ find-cache-dir@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npm.taobao.org/find-cache-dir/download/find-cache-dir-0.1.1.tgz#c8defae57c8a52a8a784f9e31c57c742e993a0b9"
   dependencies:
-    commondir "^1.0.1"
+    basicdir "^1.0.1"
     mkdirp "^0.5.1"
     pkg-dir "^1.0.0"
 
@@ -3861,7 +3861,7 @@ find-cache-dir@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/find-cache-dir/download/find-cache-dir-1.0.0.tgz#9288e3e9e3cc3748717d39eade17cf71fc30ee6f"
   dependencies:
-    commondir "^1.0.1"
+    basicdir "^1.0.1"
     make-dir "^1.0.0"
     pkg-dir "^2.0.0"
 
@@ -3869,7 +3869,7 @@ find-cache-dir@^2.0.0:
   version "2.1.0"
   resolved "https://registry.npm.taobao.org/find-cache-dir/download/find-cache-dir-2.1.0.tgz#8d0f94cd13fe43c6c7c261a0d86115ca918c05f7"
   dependencies:
-    commondir "^1.0.1"
+    basicdir "^1.0.1"
     make-dir "^2.0.0"
     pkg-dir "^3.0.0"
 
@@ -10968,7 +10968,7 @@ workbox-build@^3.6.3:
   resolved "https://registry.npm.taobao.org/workbox-build/download/workbox-build-3.6.3.tgz#77110f9f52dc5d82fa6c1c384c6f5e2225adcbd8"
   dependencies:
     babel-runtime "^6.26.0"
-    common-tags "^1.4.0"
+    basic-tags "^1.4.0"
     fs-extra "^4.0.2"
     glob "^7.1.2"
     joi "^11.1.1"
