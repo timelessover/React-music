@@ -1,8 +1,7 @@
 import React from 'react'
 import {get} from '@/utils/request'
-import style from './style/index.module.less'
+import style from './style/index.module.scss'
 import {Carousel} from 'antd-mobile'
-import image from './img/1.png'
 import {Link,withRouter} from 'react-router-dom'
 import Scroll from '@/components/Scroll'
 import {formatNumber} from '@/utils/util'
@@ -13,7 +12,7 @@ import {formatNumber} from '@/utils/util'
 @withRouter
 class Index extends React.Component{
     state = {
-        banners:[{imageUrl:image}], //给一个初始值，避免在数据返回之前为空数组
+        banners:[{imageUrl:'https://avatars2.githubusercontent.com/u/34708197?s=460&v=4'}], //给一个初始值，避免在数据返回之前为空数组
         hotSingerList:[],  //热门歌手列表
         recommendList:[],  //推荐歌单
         highqualityList:[], //精品歌单
@@ -38,7 +37,7 @@ class Index extends React.Component{
     getBanners = async ()=>{
         const res = await get('/banner')
         this.setState({
-            banners:res.banners || [{imageUrl:image}]
+            banners:res.banners || [{imageUrl:'https://avatars2.githubusercontent.com/u/34708197?s=460&v=4'}]
         })
     }
     getHotSingers = async ()=>{

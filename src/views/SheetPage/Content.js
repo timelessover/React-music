@@ -1,6 +1,6 @@
 import React from 'react'
 import {Tabs} from 'antd-mobile'
-import style from './style/content.module.less'
+import style from './style/content.module.scss'
 import Scroll from '@/components/Scroll'
 import SongList from '@/components/SongList'
 import PropTypes from 'prop-types'

@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './style/index.module.less'
+import style from './style/index.module.scss'
 import { get } from '@/utils/request'
 import NavBar from '@/components/NavBar'
 import Content from './Content'

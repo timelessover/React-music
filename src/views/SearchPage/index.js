@@ -1,7 +1,7 @@
 import React from 'react'
 import { get } from '@/utils/request'
 import { SearchBar } from 'antd-mobile'
-import style from './style/index.module.less'
+import style from './style/index.module.scss'
 import ResultTabs from './ResultTabs'
 import Loading from '../../components/Loading/index'
 

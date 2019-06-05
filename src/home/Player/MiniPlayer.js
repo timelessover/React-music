@@ -1,7 +1,7 @@
 import React from 'react'
-import style from './style/miniPlayer.module.less'
+import style from './style/miniPlayer.module.scss'
 import { inject, observer } from 'mobx-react'
-import './style/animate.less'
+import './style/animate.scss'
 import ProgressCircle from '@/components/ProgressCircle'
 
 @inject('appStore') @observer

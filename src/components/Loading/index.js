@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import style from './style/index.module.less'
+import style from './style/index.module.scss'
 
 class Loading extends React.Component {
     static propTypes = {

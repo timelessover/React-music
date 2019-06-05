@@ -1,17 +1,32 @@
-import React from 'react';
-import './App.css';
-import Player from "@/home/Player";
+import React, { Component } from 'react'
+import './App.css'
+import SiderMenu from './home/SiderMenu'
+import Main from './home/Main'
+import './assets/iconfont/style.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <div>
-          <Player></Player>
-        </div>
-      </header>
-    </div>
-  );
+/**
+ *
+ *
+ * @class App
+ * @extends {Component}
+ */
+class App extends Component {
+  render () {
+      return (
+          <div style={styles.container}>
+              <SiderMenu/>
+              <Main/>
+          </div>
+      )
+  }
 }
 
-export default App;
+const styles = {
+ container:{
+     width:'100vw',
+     height:'100vh',
+     overflow:'hidden'
+ }
+}
+
+export default App

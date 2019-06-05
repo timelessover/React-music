@@ -1,6 +1,6 @@
 import React from 'react'
 import {Tabs} from 'antd-mobile'
-import style from './style/content.module.less'
+import style from './style/content.module.scss'
 import {withRouter} from 'react-router-dom'
 import {get} from '@/utils/request'
 import SongList from '@/components/SongList'

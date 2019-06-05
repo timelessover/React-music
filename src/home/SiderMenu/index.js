@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './style/index.module.less'
+import style from './style/index.module.scss'
 import {Switch} from 'antd-mobile'
 import {inject,observer} from 'mobx-react'
 
@@ -18,7 +18,7 @@ class Sider extends React.Component{
             <div className={style.container}>
                 <div className={style.header}>
                     <div>
-                        <img src={require('./img/01.jpg')} alt=""/>
+                        <img src={''} alt=""/>
                         游客试用
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { get } from '@/utils/request'
 import Loading from '@/components/Loading/index'
-import style from './style/index.module.less'
+import style from './style/index.module.scss'
 import { withRouter } from 'react-router-dom'
 import Scroll from '@/components/Scroll'
 

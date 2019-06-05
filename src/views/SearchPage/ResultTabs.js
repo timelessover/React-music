@@ -2,7 +2,7 @@ import React from 'react'
 import {Tabs} from 'antd-mobile'
 import {get} from '@/utils/request'
 import Loading from '@/components/Loading'
-import style from './style/resultTabs.module.less'
+import style from './style/resultTabs.module.scss'
 import {formatNumber} from '@/utils/util'
 import dayjs from 'dayjs'
 import Scroll from '@/components/Scroll'
@@ -92,7 +92,7 @@ class ResultTabs extends React.Component{
             ...item,
             ar:item.artists,
             al:{
-                picUrl:require('./img/music.jpg')
+                picUrl:''
             }
         }
         this.props.appStore.addSong(obj)

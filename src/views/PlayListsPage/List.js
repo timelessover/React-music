@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './style/list.module.less'
+import style from './style/list.module.scss'
 import {formatNumber} from '@/utils/util'
 import {Link} from 'react-router-dom'
 

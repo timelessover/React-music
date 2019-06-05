@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './style/index.module.less'
+import style from './style/index.module.scss'
 import { withRouter } from 'react-router-dom'
 import { inject, observer } from 'mobx-react'
 import List from './List'

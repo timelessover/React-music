@@ -49,7 +49,7 @@ export async function get (url, param) {
         },
     })
     if (response.ok) {
-        return response.json()
+        return response
     } else {
         Toast.offline(response.statusText || '网络错误')
         return response

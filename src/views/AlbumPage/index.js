@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-import style from './style/index.module.less'
+import style from './style/index.module.scss'
 import { get } from '@/utils/request'
 import NavBar from '@/components/NavBar'
 import { Tabs } from 'antd-mobile'

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Menu} from'antd-mobile'
 import PropTypes from 'prop-types';
-import style from './style/catMenu.module.less'
+import style from './style/catMenu.module.scss'
 
 class CatMenu extends React.Component{
     static propTypes = {

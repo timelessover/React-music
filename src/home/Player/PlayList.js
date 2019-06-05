@@ -1,8 +1,8 @@
-import React from './node_modules/react'
+import React from 'react'
 import style from './style/playlist.module.scss'
-import { inject, observer } from './node_modules/mobx-react'
-import Scroll from './node_modules/@/components/Scroll'
-import { Modal } from './node_modules/antd-mobile'
+import { inject, observer } from 'mobx-react'
+import Scroll from '@/components/Scroll'
+import { Modal } from 'antd-mobile'
 
 const alert = Modal.alert
 

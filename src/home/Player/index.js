@@ -1,8 +1,8 @@
-import React from './node_modules/react'
-import { observer, inject } from './node_modules/mobx-react'
+import React from 'react'
+import { observer, inject } from 'mobx-react'
 import MiniPlayer from './MiniPlayer'
 import NormalPlayer from './NormalPlayer'
-import PlayList from './PlayList'
+import PlayList from './PlayList'   
 
 @inject('appStore') @observer
 class Player extends React.Component {

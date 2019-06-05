@@ -1,4 +1,4 @@
-@import "../../../assets/style/default";
+@import "../../../assets/style/basic";
 
 .wrapper{
   position: fixed;
@@ -7,7 +7,7 @@
 
   .mask {
     height: 300px;
-    background-color: @fill-mask;
+    background-color: $fill-mask;
   }
 }
 

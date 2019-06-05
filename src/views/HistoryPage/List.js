@@ -1,6 +1,6 @@
 import React from 'react'
 import Scroll from '@/components/Scroll'
-import style from './style/list.module.less'
+import style from './style/list.module.scss'
 import {inject,observer} from 'mobx-react'
 
 @inject('appStore') @observer

@@ -1,5 +1,5 @@
-@import "../../../assets/style/default";
 @import "../../../assets/style/basic";
+@import "../../../assets/style/common";
 
 .tab-item {
   position: relative;
@@ -30,7 +30,6 @@
 
 .songs {
   li {
-    @include list-item;
 
     .left {
       width: 80%;
@@ -51,7 +50,6 @@
 
 .albums,.artists,.playlists {
   li {
-    @include list-item;
 
     img {
       width: 45px;

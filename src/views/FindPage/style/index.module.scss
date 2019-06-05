@@ -15,7 +15,7 @@
     height: 155px;
     touch-action: none;
     box-sizing: border-box;
-    @include section;
+    @extend .section;
 
     img {
       width: 100%;
@@ -46,7 +46,7 @@
   }
 
   .hot-singer-box {
-    @include section;
+    @extend .section;
 
     .title-box {
       display: flex;
@@ -90,7 +90,7 @@
   }
 
   .recommend-box {
-    @include section;
+    @extend .section; 
 
     ul {
       display: flex;

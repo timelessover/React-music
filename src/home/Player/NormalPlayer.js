@@ -1,12 +1,12 @@
-import React from './node_modules/react'
-import style from './style/normalPlayer.module.less'
-import { inject, observer } from './node_modules/mobx-react'
-import { CSSTransition } from './node_modules/react-transition-group'
-import './style/animate.less'
-import animations from './node_modules/create-keyframe-animation'
-import ProgressBar from './node_modules/@/components/ProgressBar'
-import { formatTime } from './node_modules/@/utils/util'
-import Scroll from './node_modules/@/components/Scroll'
+import React from 'react'
+import style from './style/normalPlayer.module.scss'
+import { inject, observer } from 'mobx-react'
+import { CSSTransition } from 'react-transition-group'
+import './style/animate.scss'
+import animations from 'create-keyframe-animation'
+import ProgressBar from '@/components/ProgressBar'
+import { formatTime } from '@/utils/util'
+import Scroll from '@/components/Scroll'
 
 @inject('appStore') @observer
 class NormalPlayer extends React.Component {

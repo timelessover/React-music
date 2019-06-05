@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Scroll from '@/components/Scroll'
-import style from './style/index.module.less'
+import style from './style/index.module.scss'
 
 class SongList extends React.Component {
     static propTypes = {

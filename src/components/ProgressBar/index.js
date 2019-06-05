@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './style/index.module.less'
+import style from './style/index.module.scss'
 import PropTypes from 'prop-types'
 
 const progressBtnWidth = 16
