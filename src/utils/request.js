@@ -1,7 +1,7 @@
 import 'whatwg-fetch'
 import { Toast } from 'antd-mobile'
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || ''
+const BASE_URL = 'https://v1.itooi.cn/netease'
 
 /**
  * 处理url
@@ -49,7 +49,7 @@ export async function get (url, param) {
         },
     })
     if (response.ok) {
-        return response
+        return response.json()
     } else {
         Toast.offline(response.statusText || '网络错误')
         return response
@@ -70,6 +70,7 @@ export async function post (url, parma) {
         body: JSON.stringify(parma),
     })
     if (response.ok) {
+        console.log(response)
         return response.json()
     } else {
         Toast.offline(response.statusText || '网络错误')

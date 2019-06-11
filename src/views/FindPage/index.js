@@ -12,7 +12,7 @@ import {formatNumber} from '@/utils/util'
 @withRouter
 class Index extends React.Component{
     state = {
-        banners:[{imageUrl:'https://avatars2.githubusercontent.com/u/34708197?s=460&v=4'}], //给一个初始值，避免在数据返回之前为空数组
+        banners:[], //给一个初始值，避免在数据返回之前为空数组
         hotSingerList:[],  //热门歌手列表
         recommendList:[],  //推荐歌单
         highqualityList:[], //精品歌单
@@ -36,8 +36,9 @@ class Index extends React.Component{
     }
     getBanners = async ()=>{
         const res = await get('/banner')
+        console.log(res.data)
         this.setState({
-            banners:res.banners || [{imageUrl:'https://avatars2.githubusercontent.com/u/34708197?s=460&v=4'}]
+            banners: res.data || []
         })
     }
     getHotSingers = async ()=>{
@@ -91,7 +92,7 @@ class Index extends React.Component{
                     <div>
                         <div className={style['banners-box']}>
                             <Carousel infinite autoplay>
-                                {banners && banners.map(item=> <img key={item.imageUrl} src={item.imageUrl} alt=""/>)}
+                                {banners && banners.map(item => <img key={item.picUrl} src={item.picUrl} alt=""/>)}
                             </Carousel>
                         </div>
                         <div className={style.menu}>

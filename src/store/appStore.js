@@ -63,7 +63,7 @@ class AppStore {
             song = {...this.playlist[this.currentIndex]}
             song.artists = song.ar.map(item => item.name).join('/')
             song.image = song.al ? song.al.picUrl : ''
-            song.url = `https://music.163.com/song/media/outer/url?id=${song.id}.mp3`
+            song.url = ` https://v1.itooi.cn/netease/url?id=${song.id}&quality=flac`
             song.duration = (song.dt / 1000) || (song.duration) / 1000 || 0
         }
         return song
