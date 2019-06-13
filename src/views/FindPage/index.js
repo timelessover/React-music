@@ -36,26 +36,27 @@ class Index extends React.Component{
     }
     getBanners = async ()=>{
         const res = await get('/banner')
-        console.log(res.data)
         this.setState({
             banners: res.data || []
         })
     }
     getHotSingers = async ()=>{
-        const res = await get('/top/artists?offset=0&limit=8')
+        const res = await get('/artist/top?page=0&pageSize=30')
         this.setState({
-            hotSingerList:res.artists || []
+            hotSingerList:res.data.slice(0,8) || []
         })
     }
     getRecommends = async ()=>{
-        const res = await get('/personalized')
+        const res = await get('/songList/highQuality?cat=全部&pageSize=100')
+        console.log(res.data)
         const list = res.result || []
         this.setState({
             recommendList:list.slice(0,6)
         })
     }
     getHighqualitys = async ()=>{
-        const res = await get('/top/playlist/highquality?limit=6')
+        const res = await get('/songList/highQuality?cat=全部&pageSize=100')
+        console.log(res.data)
         this.setState({
             highqualityList:res.playlists || []
         })
