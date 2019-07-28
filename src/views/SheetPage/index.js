@@ -21,9 +21,10 @@ class Detail extends React.Component{
         this.setState({
             loading:true
         })
-        const res = await get(`/playlist/detail?id=${id}`)
+        const res = await get(`/songList?id=${id}`)
+        
         this.setState({
-            detail:res.playlist || {},
+            detail: res.data || {},
             loading:false
         })
     }

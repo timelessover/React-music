@@ -39,10 +39,10 @@ class Content extends React.Component{
         this.setState({
             songsLoading:true
         })
-        const res = await get(`/artists?id=${id}`)
+        const res = await get(`/song/artist?id=${id}`)
         this.setState({
             songsLoading:false,
-            songs:res.hotSongs || []
+            songs:res.data || []
         })
     }
     getAlbums = async (id)=>{
@@ -52,23 +52,23 @@ class Content extends React.Component{
         this.setState({
             albumsLoading:true
         })
-        const res = await get(`/artist/album?id=${id}`)
+        const res = await get(`/album/artist?id=${id}`)
         this.setState({
             albumsLoading:false,
-            albums:res.hotAlbums || []
+            albums:res.data || []
         })
     }
     getMvs = async (id)=>{
-        if(this.state.mvs.length){
+        if (this.state.mvs.length){
             return
         }
         this.setState({
             mvsLoading:true
         })
-        const res = await get(`/artist/mv?id=${id}`)
+        const res = await get(`/mv/artist?id=${id}`)
         this.setState({
             mvsLoading:false,
-            mvs:res.mvs || []
+            mvs:res.data || []
         })
     }
     getInfo = async (id)=>{
@@ -78,10 +78,10 @@ class Content extends React.Component{
         this.setState({
             infoLoading:true
         })
-        const res = await get(`/artist/desc?id=${id}`)
+        const res = await get(`/artist/info?id=${id}`)
         this.setState({
             infoLoading:false,
-            info:res
+            info:res.data
         })
     }
     handleChange = (tab,index)=>{

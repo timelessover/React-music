@@ -37,7 +37,8 @@ class ResultTabs extends React.Component{
             artists:[],
             playlists:[]
         })
-        const res = await get(`/search?keywords=${keywords}&type=${type}`)
+        const res = await get(`/search?keyword=${keywords}&type=song`)
+        console.log(res)
         const result = res.result || {}
         switch (type){
             case 1: {

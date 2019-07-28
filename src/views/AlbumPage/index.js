@@ -35,8 +35,8 @@ class AlbumPage extends React.Component {
             loading: true
         })
         const res = await get(`/album?id=${id}`)
-        const album = res.album || {}
-
+        const album = res.data.album || {}
+        console.log(res.data)
         const info = {
             coverImgUrl: album.blurPicUrl,
             description: album.description,
@@ -49,7 +49,7 @@ class AlbumPage extends React.Component {
         }
         this.setState({
             info: info,
-            songs: res.songs || [],
+            songs: res.data.songs || [],
             loading: false
         })
     }

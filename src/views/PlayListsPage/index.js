@@ -88,10 +88,8 @@ class PlayListsPage extends React.Component {
             playlists:[],
             haveMore:true
         })
-        const res = await get('/top/playlist',{
-            cat:cat[1],
-            limit:16
-        })
+        const res = await get('/playlist')
+        console.log(res)
         this.setState({
             loading:false,
             playlists:res.playlists || [],

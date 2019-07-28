@@ -12,7 +12,8 @@ class ArtistsPage extends React.Component{
         artists:[],
         loading:false,
         isLoadMore:false, //是否正在'加载更多'
-        haveMore:true //数据是否还有
+        haveMore:true, //数据是否还有
+        currentPage: 0 //当前
     }
 
     componentDidMount(){
@@ -22,14 +23,29 @@ class ArtistsPage extends React.Component{
         this.setState({
             loading:true
         })
-        const res = await get('/top/artists',{
-            limit:30
+        const res = await get('/artist/top',{
+            page: this.state.currentPage
         })
+        if(res.data.length < 30) {
+            this.setState({
+                havaMore: false,
+            })
+        }else{
+            let addpage = this.state.currentPage + 1
+            this.setState({
+                haveMore: true,
+                currentPage: addpage
+            })
+            console.log(this.state.currentPage)
+        }
         this.setState({
-            loading:false,
-            artists:res.artists || [],
-            haveMore:res.more
+            loading: false,
+            artists: res.data || [],
         })
+        
+    }
+    checkList(){
+
     }
     goBack = ()=>{
         this.props.history.goBack()
@@ -41,19 +57,30 @@ class ArtistsPage extends React.Component{
         this.setState({
             isLoadMore:true
         })
-        const res = await get('/top/artists',{
-            limit:30,
-            offset:this.state.artists.length
+        const res = await get('/artist/top',{
+            page:this.state.currentPage,
         })
+        console.log(res.data)
         //增加两秒的延迟，实际项目中可以不用，这里只是为显示这样一个加载中的过程
         setTimeout(()=>{
+            if (res.data.length < 30) {
+                this.setState({
+                    havaMore: false,
+                })
+            } else {
+                let addpage = this.state.currentPage + 1
+                this.setState({
+                    haveMore: true,
+                    currentPage: addpage
+                })
+                console.log(this.state.currentPage)
+            }
             this.setState({
-                artists:this.state.artists.concat(res.artists || []),
+                artists:this.state.artists.concat(res.data || []),
                 isLoadMore:false,
-                haveMore:res.more
             })
             this.scroll && this.scroll.finishPullUp()
-        },2000)
+        },1000)
     }
 
     render(){
@@ -73,7 +100,7 @@ class ArtistsPage extends React.Component{
                     <Scroll onPullingUp={this.onLoadMore} ref={el=>this.scroll=el}>
                         <div>
                             <ul>
-                                {artists && artists.map(item=><li key={item.id}>
+                                {artists && artists.map((item, index) => <li key={index}>
                                     <Link to={`/singer/${item.id}`}>
                                         <div className={style['singer-item']}>
                                             <div className={style.avatar}>

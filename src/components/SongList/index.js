@@ -39,20 +39,6 @@ class SongList extends React.Component {
             })
         }
     }
-
-    // //新的生命周期,但是拿不到this
-    // static getDerivedStateFromProps = (nextProps, prevState) => {
-    //     const {list} = nextProps
-    //     console.log(1,this)
-    //     if (list !== prevState.list) {
-    //         // this.scroll && this.scroll.refresh()
-    //         return {
-    //             list
-    //         }
-    //     }
-    //     return null
-    // }
-
     loadingMore = async ()=>{
         await this.props.loadingMore()
         this.scroll && this.scroll.finishPullUp()
@@ -77,10 +63,10 @@ class SongList extends React.Component {
                    <div>
                        <ul>
                            {
-                               list && list.map((item,index)=><li key={item.id} onClick={()=>this.onSelectSong(item,index)} className={currentSong.id===item.id ? style.active : ''}>
+                               list && list.map((item,index)=><li key={index} onClick={()=>this.onSelectSong(item,index)} className={currentSong.id===item.id ? style.active : ''}>
                                    <div className={`${style.num} ${index<3 ? style.red : ''}`}>{index + 1}</div>
                                    <div className={style.pic}>
-                                       <img src={item.al && item.al.picUrl} alt=""/>
+                                       <img src={ item.al ? item.al.picUrl : item.album.picUrl} alt=""/>
                                    </div>
                                    <div className={style.text}>
                                        <h3>{item.name}</h3>

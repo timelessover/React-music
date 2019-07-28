@@ -37,9 +37,9 @@ class MVPage extends React.Component{
         })
     }
     getMvData = async (id)=>{
-        const res = await get(`/mv/detail?mvid=${id}`)
+        const res = await get(`/mv?id=${id}`)
         this.setState({
-            mvData:res.data || {}
+            mvData:res.data.data || {}
         })
     }
     goBack = ()=>{
@@ -48,9 +48,9 @@ class MVPage extends React.Component{
     getComments = async (id)=>{
         const res = await get(`/comment/mv?id=${id}`)
         this.setState({
-            comments:res.comments || [],
-            hotComments:res.hotComments || [],
-            total:res.total || 0
+            comments:res.data.comments || [],
+            hotComments:res.data.hotComments || [],
+            total:res.data.total || 0
         })
     }
     onLoadMore = async()=>{

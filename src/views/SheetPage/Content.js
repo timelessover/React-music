@@ -29,13 +29,14 @@ class Content extends React.Component{
             this.setState({
                 songs: info.tracks ? info.tracks.slice(0,30) : [] //避免第一次的延迟，
             })
+            console.log(info.tracks)
         }
     }
     //数据已经全部返回，所以这里模拟数据请求和分页
     getSongs = (size=0)=>{
         const {info} = this.props
         const allList = info.tracks ? info.tracks.slice() : []
-
+      
         if(this.state.songs.length >= allList.length){
             return
         }

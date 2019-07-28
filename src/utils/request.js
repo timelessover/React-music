@@ -1,5 +1,6 @@
-import 'whatwg-fetch'
 import { Toast } from 'antd-mobile'
+import axios from 'axios'
+
 
 const BASE_URL = 'https://v1.itooi.cn/netease'
 
@@ -42,14 +43,9 @@ function ObjToURLString (param) {
 
 export async function get (url, param) {
     const completeUrl = handleURL(url, param)
-    const response = await fetch(completeUrl, {
-        credentials: 'include',
-        xhrFields: {
-            withCredentials: true       //跨域
-        },
-    })
-    if (response.ok) {
-        return response.json()
+    const response = await axios(completeUrl)
+    if (response) {
+        return response.data
     } else {
         Toast.offline(response.statusText || '网络错误')
         return response
@@ -58,20 +54,9 @@ export async function get (url, param) {
 
 export async function post (url, parma) {
     const completeUrl = BASE_URL + url
-    const response = await fetch(completeUrl, {
-        credentials: 'include',
-        method: 'POST',
-        xhrFields: {
-            withCredentials: true
-        },
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: JSON.stringify(parma),
-    })
-    if (response.ok) {
-        console.log(response)
-        return response.json()
+    const response = await axios(completeUrl)
+    if (response) {
+        return response.data
     } else {
         Toast.offline(response.statusText || '网络错误')
         return response

@@ -47,8 +47,8 @@ class Index extends React.Component{
         })
     }
     getRecommends = async ()=>{
-        const res = await get('/songList/highQuality?cat=全部&pageSize=100')
-        console.log(res.data)
+        const res = await get('/songList/hot')
+        console.log(res)
         const list = res.result || []
         this.setState({
             recommendList:list.slice(0,6)
@@ -56,9 +56,9 @@ class Index extends React.Component{
     }
     getHighqualitys = async ()=>{
         const res = await get('/songList/highQuality?cat=全部&pageSize=100')
-        console.log(res.data)
+        const list = res.data || []
         this.setState({
-            highqualityList:res.playlists || []
+            highqualityList: list.slice(0, 6) || []
         })
     }
 
@@ -124,7 +124,7 @@ class Index extends React.Component{
                             <ul>
                                 {recommendList && recommendList.map(sheet=><li key={sheet.id}>
                                     <Link to={`/sheet/${sheet.id}`} className={style['sheet-box']}>
-                                        <img src={sheet.picUrl} alt=""/>
+                                        <img src={sheet.coverImgUrl} alt=""/>
                                         <div>{sheet.name}</div>
                                         <p className={style.playCount}><span className={'iconfont icon-erji1'} style={{fontSize:12}}/> {formatNumber(sheet.playCount)}</p>
                                     </Link>

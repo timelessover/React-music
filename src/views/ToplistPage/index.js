@@ -23,8 +23,9 @@ class Index extends React.Component {
             loading: true
         })
         //获取单个排行榜详情内容用歌单接口
-        const res = await get('/toplist/detail')
-        const list = res.list || []
+        const res = await get('/songList/hot')
+        // console.log(res)
+        const list = res.data || []
         this.setState({
             loading: false,
             topList: list
@@ -51,7 +52,7 @@ class Index extends React.Component {
                                         <div className={style['top-info']}>
                                             <div className={style.name}>{item.name}</div>
                                             <div>
-                                                {item.tracks && item.tracks.map((song, index) => <p key={song.first}>{index + 1}.{song.first}- {song.second}</p>)}
+                                                {item.tracks && item.tracks.map((song, index) => <p key={index}>{index + 1}.{song.first}- {song.second}</p>)}
                                             </div>
                                         </div>
                                     </li>

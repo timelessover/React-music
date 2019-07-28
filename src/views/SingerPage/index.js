@@ -17,9 +17,10 @@ class SingerPage extends React.Component {
     }
 
     getInfo = async (id) => {
-        const res = await get(`/artists?id=${id}`)
+        const res = await get(`/artist/info?id=${id}`)
+        console.log(res)
         this.setState({
-            info: res.artist || {}
+            info: res.data || {}
         })
 
     }

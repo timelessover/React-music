@@ -61,8 +61,9 @@ class AppStore {
         if (this.playlist[this.currentIndex]) {
             //引用类型的赋值一定要注意，这里必须深拷贝，否则song的改变会改变this.playlist，this.playlist的改变又触发计算属性，最后导致报错
             song = {...this.playlist[this.currentIndex]}
-            song.artists = song.ar.map(item => item.name).join('/')
-            song.image = song.al ? song.al.picUrl : ''
+            console.log(song)
+            song.image = song.album.picUrl || song.al.picUrl 
+            song.artists = song.artists.map(item => item.name).join('/') || song.ar.map(item => item.name).join('/')
             song.url = ` https://v1.itooi.cn/netease/url?id=${song.id}&quality=flac`
             song.duration = (song.dt / 1000) || (song.duration) / 1000 || 0
         }
@@ -146,9 +147,9 @@ class AppStore {
      */
     @action
     getLyric = async (id)=>{
-        const res = await get(`/lyric?id=${id}`)
+        const res = await get(`/lrc?id=${id}`)
         runInAction(()=>{
-            this.lyric = res.lrc ? new Lyric(res.lrc.lyric, this.handler) : null
+            this.lyric = res ? new Lyric(res, this.handler) : null
             this.lyric && this.lyric.play()
         })
     }
